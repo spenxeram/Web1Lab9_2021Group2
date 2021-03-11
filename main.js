@@ -2,6 +2,7 @@
 // https://api.coindesk.com/v1/bpi/currentprice/usd.json
 
 // global variables
+let btn = document.querySelector(".btn");
 let currencies = {
   usd: 0,
   jpy: 0,
@@ -30,7 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // event Listeners
-
+btn.addEventListener("click", () => {
+  let customRequest = document.querySelector("#custom-request");
+  let requestValue = document.querySelector("#currency").value;
+  customRequest.classList = requestValue;
+  getBTCVal(requestValue);
+})
 
 // ajax call to api
 function getBTCVal(currency) {
@@ -64,7 +70,7 @@ function outputCurrency(result, currency) {
   outputTarget.classList = `${currency} ${valueclass}`;
   currencies[currency] = currencyValue;
   currencyValue = Math.round(currencyValue);
-  outputTarget.innerText = currencyValue.toLocaleString();
+  outputTarget.innerText = `${currencyValue.toLocaleString()} ${currency.toUpperCase()}`;
 }
 
 function updateCurrencies() {
