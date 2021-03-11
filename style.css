@@ -1,0 +1,29 @@
+* {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+.jumbotron {
+    padding: 30px 0 10px 0 !important;
+}
+
+.red {
+  color: red;
+  animation: red 1s;
+}
+
+.green {
+  color: green;
+  animation: green 1s;
+}
+
+
+@keyframes red {
+  0%   {background-color: red;}
+  100% {background-color: white;}
+}
+
+@keyframes green {
+  0%   {background-color: green;}
+  100% {background-color: white;}
+}
